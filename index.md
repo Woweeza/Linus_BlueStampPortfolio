@@ -53,37 +53,6 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
-# Starter Project
-
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-# Summary
-
-My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Board and Arduino Shield stacked on top of each other and they are connected to a breadboard with a circuit where a red LED light lights up when you press a button.
-
-# Components used
-
-- 1 Arduino Uno
-- 1 USB A->B cable
-- 1 Arduino Proto Shield
-- 1 Breadboard
-- 3 Buttons
-- 3 LEDs
-- 4 Resistors
-- 2 Ceramic Capacitors
-- 2 8-pin female 0.1" headers (1*6)
-- 5 5-pin female 0.1" headers (1*8)
-
-#  Challenges Faced
-
-The biggest challenge that I faced was trying to build the circuit on the breadboard and Arduino Uno becuase I had never done anything like it before so I didn't fully understand how a breadboard worked and how to make it so that I could put multiple circuits on one breadboard so that they would both work but not interfere with each other. Another challenge was mounting the Arduino Proto Shield onto the Arduino Uno because I had soldered the female pins on but they were a little bit offset so the female and male pins would not fit together. I had to resolder it all so that they would line up.
-
-# Next Steps
-
-I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, and code the arm so that the phone can make the arm work remotely.
-
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
@@ -120,3 +89,34 @@ One of the best parts about Github is that you can view how other people set up 
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
 To watch the BSE tutorial on how to create a portfolio, click here.
+
+# Starter Project
+
+**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+**Summary**
+
+My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Board and Arduino Shield stacked on top of each other and they are connected to a breadboard with a circuit where a red LED light lights up when you press a button.
+
+# Components used
+
+- 1 Arduino Uno
+- 1 USB A->B cable
+- 1 Arduino Proto Shield
+- 1 Breadboard
+- 3 Buttons
+- 3 LEDs
+- 4 Resistors
+- 2 Ceramic Capacitors
+- 2 8-pin female 0.1" headers (1*6)
+- 5 5-pin female 0.1" headers (1*8)
+
+#  Challenges Faced
+
+The biggest challenge that I faced was trying to build the circuit on the breadboard and Arduino Uno becuase I had never done anything like it before so I didn't fully understand how a breadboard worked and how to make it so that I could put multiple circuits on one breadboard so that they would both work but not interfere with each other. Another challenge was mounting the Arduino Proto Shield onto the Arduino Uno because I had soldered the female pins on but they were a little bit offset so the female and male pins would not fit together. I had to resolder it all so that they would line up.
+
+# Next Steps
+
+I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, and code the arm so that the phone can make the arm work remotely.
