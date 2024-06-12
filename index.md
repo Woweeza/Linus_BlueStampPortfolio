@@ -100,7 +100,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Board and Arduino Shield stacked on top of each other and they are connected to a breadboard with a circuit where a red LED light lights up when you press a button.
 
-# Components used
+## Components used
 
 - 1 Arduino Uno
 - 1 USB A->B cable
