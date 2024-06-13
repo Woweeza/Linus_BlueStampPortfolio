@@ -1,5 +1,5 @@
 # Phone Controlled Robotic Arm
-<!---Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!-->
+<!---The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has a claw that opens and closes to pick up and grab objects. My biggest challenges, takeaways, and triumphs were...-->
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -89,7 +89,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.-->
 
 <!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=syb-JsTi7dA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Summary 
 
