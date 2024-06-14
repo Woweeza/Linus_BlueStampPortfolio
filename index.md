@@ -1,4 +1,4 @@
-# Phone Controlled Robotic Arm
+`# Phone Controlled Robotic Arm
 <!---The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has a claw that opens and closes to pick up and grab objects. My biggest challenges, takeaways, and triumphs were...-->
 
 
@@ -35,7 +35,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - What has been surprising about the project so far
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone 
-
+-->
 # First Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
@@ -48,7 +48,32 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
-# Schematics 
+## Summary
+
+My first milestone was assembling the base of the robotic arm so that I could test it and make sure that the Arduino Nano, the Arduino Shield, the first servo, and the batteries were all working properly. It was also so I could test uploading the code from the Arduino software to the Arduino Nano to make sure that it was all connected properly
+
+## Components used
+
+- 1 Arduino Nano: Controls all the servos
+- 1 Arduino Shield: Receives power from batteries and hooks up to all the wires
+- 1 USB cable: Receives signals and power from laptop
+- 1 Servo: Rotate the base of the arm
+- Wooden Cutouts: Creates the bulk of the physical part of the base
+- Batteries: Powers everything
+- Wires: Connects everything to electricity
+- Velcro: Holds the battery holder in place
+- Screws, nuts, and columns: Secures all the parts to each other
+- Turntable: Uses a ball bearing to allow the base to rotate 360 degrees
+
+## Challenges Faced
+
+The biggest challenge that I faced was when I was assembling the base, I kept screwing in the wrong servo arm into the hole where it is supposed to go. So when I realized my misteake, I would have to take apart half the base just to put in the right servo arm. The screws that kept the servo arm in place were also super tiny so it was really hard getting them in and out. And I actually put the wrong servo arm in twice before I got the right one in.
+
+## Next Steps
+
+I plan on completeing the physical part of my robotic arm so that I can control it with a controller using joysticks. To control the servos that will move the arm.
+
+<!---# Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Code
