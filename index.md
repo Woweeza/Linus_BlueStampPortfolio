@@ -1,4 +1,4 @@
-`# Phone Controlled Robotic Arm
+# Phone Controlled Robotic Arm
 <!---The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has a claw that opens and closes to pick up and grab objects. My biggest challenges, takeaways, and triumphs were...-->
 
 
