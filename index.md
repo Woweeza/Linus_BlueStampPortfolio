@@ -30,12 +30,28 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
--->
+## Summary
+
+My second milestone was finishing assembling my 3 jointed robotic arm and making sure that everything worked properly and there were no bugs in my code. I also built the wired controller so that I could control my robot.
+
+## Components Used
+
+- 8 Female-Female Jumper Wires: Connect the controller to the Arduino Shield
+- Wooden Cutouts: Creates the bulk of the physical part of the arm and controller
+- Screws, nuts, and columns: Holds together all the parts of the robot and controller
+- 3 Servo Arms: Connect the cutouts to the servos so they can move together
+- 3 MG90s Servos: Rotate to move the arms of the robot
+- Zip Ties and Wire Organizing Tubes: Organize all the wires so they don't interfere with the movement of the arm
+- 2 Joysticks: Takes physical input from the user so they can control the robot.
+
+## Challenges Faced
+
+The biggest challenge that I faced was when I used the controller the close the claw of the arm, the claw would close but the servo would be able to rotate a little bit more so the other servos in the arm would start rotating to try to compensate for the claw not being able to close. The way that I fixed it was by making an if else statement in the code so that the servo was only allowed to rotate so much so that the claw would close but if it kept on trying to close, it would just stop the operation of that servo and rotate it back a little bit and then resume the operation of the servo.
+
+## Next Steps
+
+I plan on hooking the robot arm up to Bluetooth on a phone so that I can program an app to control the robot remotely on a phone.
+
 # First Milestone
 
 <!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
@@ -52,7 +68,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 My first milestone was assembling the base of the robotic arm so that I could test it and make sure that the Arduino Nano, the Arduino Shield, the first servo, and the batteries were all working properly. It was also so I could test uploading the code from the Arduino software to the Arduino Nano to make sure that it was all connected properly
 
-## Components used
+## Components Used
 
 - 1 Arduino Nano: Controls all the servos
 - 1 Arduino Shield: Receives power from batteries and hooks up to all the wires
@@ -252,7 +268,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.-->
 
 My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Board and Arduino Shield stacked on top of each other and they are connected to a breadboard with a circuit where a red LED light lights up when you press a button. It is meant to have one input of my choice: a switch, button, pressure sensor, and much more. And one output of my choice could be a motor or a light. The Arduino Uno Board came pre-built and I just had to connect wires to it, but I had to solder all the parts onto my Arduino Shield to build it. 
 
-## Components used
+## Components u=Used
 
 - 1 Arduino Uno
 - 1 USB A->B cable
