@@ -98,6 +98,51 @@ I plan on completeing the physical part of my robotic arm so that I can control 
 <!---Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
 
 ```c++
+/*
+ * This code applies to cokoino mechanical arm
+ * Through this link you can download the source code:
+ * https://github.com/Cokoino/CKK0006
+ * Company web site:
+ * http://cokoino.com/
+ *                                     ________
+ *                         ----|servo4| 
+ *                        |            --------
+ *                    |servo3|   
+ *                        |
+ *                        |
+ *                    |servo2|
+ *                        |
+ *                        |
+ *                  ___________
+ *                  |  servo1 |
+ *         ____________________
+ *         ____________________
+ * Fanctions:
+ * arm.servo1.read();   //read the servo of angle
+ * arm.servo2.read();
+ * arm.servo3.read();
+ * arm.servo4.read();
+ * 
+ * arm.servo1.write(angle);   //servo run
+ * arm.servo2.write(angle);
+ * arm.servo3.write(angle);
+ * arm.servo4.write(angle);
+ * 
+ * arm.left(speed);    //perform the action 
+ * arm.right(speed);
+ * arm.up(speed);
+ * arm.down(speed);
+ * arm.open(speed);
+ * arm.close(speed);
+ * 
+ * arm.captureAction();    //capture the current action,return pointer array
+ * arm.do_action(int *p,int speed);  //P is a pointer to the array
+ * 
+ * arm.JoyStickL.read_x(); //Returns joystick numerical
+ * arm.JoyStickL.read_y();
+ * arm.JoyStickR.read_x();
+ * arm.JoyStickR.read_y();
+ */
 #include "src/CokoinoArm.h"
 #define buzzerPin 9
 
@@ -224,6 +269,10 @@ void setup() {
   //arm of joy stick connection pins : xL,yL,xR,yR
   arm.JoyStickAttach(A0,A1,A2,A3);
   pinMode(buzzerPin,OUTPUT);
+  arm.servo1.write(90);
+  arm.servo2.write(90);
+  arm.servo3.write(90);
+  arm.servo4.write(90);
 }
 ///////////////////////////////////////////////////////////////
 void loop() {
