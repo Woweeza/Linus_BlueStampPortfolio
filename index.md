@@ -462,11 +462,13 @@ void loop() {
 }
 ```
 
+I took my wired controller code and added code for a Bluetooth phone control
+
 ## Block Code
 
 ![Block_Code](Roboticarmphoneappcode.jpg)
 
-I took my wired controller code and added code for a Bluetooth phone control
+I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth
 
 # Bill of Materials
 <!---Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
