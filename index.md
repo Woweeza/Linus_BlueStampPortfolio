@@ -1,5 +1,5 @@
 # Phone Controlled Robotic Arm
-<!---The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has a claw that opens and closes to pick up and grab objects. My biggest challenges, takeaways, and triumphs were...-->
+The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using either a wired controller with 2 joysticks, or a mobile app that can control the robot with buttons without the user physically touching the robot. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid to begin with and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in a language that I had never coded in before; c++. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph was being able to finally code a fully working robotic arm in a code language that I had never used before and have it connect using Bluetooth. It just felt so good to me that all my troubleshooting and frustration had been worth it.
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -12,7 +12,7 @@
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+**Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -26,7 +26,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 
-<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
+<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w3uiwzpNiVI?si=iN_QjuzFOkRXbPA1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -54,12 +54,12 @@ I plan on hooking the robot arm up to Bluetooth on a phone so that I can program
 
 # First Milestone
 
-<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
+<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v7GNhi7AYkI?si=HWXX6sRTPQ87sU7z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <!---For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
+- An explanation of the different components of your project and how they will all integrate
 - Technical progress you've made so far
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project-->
@@ -72,7 +72,7 @@ My first milestone was assembling the base of the robotic arm so that I could te
 
 - 1 Arduino Nano: Controls all the servos
 - 1 Arduino Shield: Receives power from batteries and hooks up to all the wires
-- 1 USB cable: Receives signals and power from laptop
+- 1 USB cable: Receives signals and power from the laptop
 - 1 Servo: Rotate the base of the arm
 - Wooden Cutouts: Creates the bulk of the physical part of the base
 - Batteries: Powers everything
@@ -83,20 +83,20 @@ My first milestone was assembling the base of the robotic arm so that I could te
 
 ## Challenges Faced
 
-The biggest challenge that I faced was when I was assembling the base, I kept screwing in the wrong servo arm into the hole where it is supposed to go. So when I realized my misteake, I would have to take apart half the base just to put in the right servo arm. The screws that kept the servo arm in place were also super tiny so it was really hard getting them in and out. And I actually put the wrong servo arm in twice before I got the right one in.
+The biggest challenge that I faced was when I was assembling the base, I kept screwing in the wrong servo arm into the hole where it is supposed to go. So when I realized my mistake, I would have to take apart half the base just to put in the right servo arm. The screws that kept the servo arm in place were also super tiny so it was really hard getting them in and out. I put the wrong servo arm in twice before I got the right one in.
 
 ## Next Steps
 
-I plan on completeing the physical part of my robotic arm so that I can control it with a controller using joysticks. To control the servos that will move the arm.
+I plan on completing the physical part of my robotic arm so that I can control it with a controller using joysticks. To control the servos that will move the arm.
 
 # Schematics 
-<!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.-->
+<!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resources for creating professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.-->
 ![Wiring Diagram](WiringDiagram.png)
 ![idk](dummy1.png)
 ![pluh](dummy2.png)
 ![cuh](dummy3.png)
 ![bruh](dummy4.png)
-![will anyone actually see me?](dummy5.png)
+![Does it matter what I write here?](dummy5.png)
 
 
 # Code
@@ -105,10 +105,10 @@ I plan on completeing the physical part of my robotic arm so that I can control 
 ## Wired Controller Code
 ```c++
 /*
- * This code applies to cokoino mechanical arm
+ * This code applies to the Cokoino mechanical arm
  * Through this link you can download the source code:
  * https://github.com/Cokoino/CKK0006
- * Company web site:
+ * Company website:
  * http://cokoino.com/
  *                                     ________
  *                         ----|servo4| 
@@ -123,7 +123,7 @@ I plan on completeing the physical part of my robotic arm so that I can control 
  *                  |  servo1 |
  *         ____________________
  *         ____________________
- * Fanctions:
+ * Functions:
  * arm.servo1.read();   //read the servo of angle
  * arm.servo2.read();
  * arm.servo3.read();
@@ -272,7 +272,7 @@ void setup() {
   Serial.begin(9600);
   //arm of servo motor connection pins
   arm.ServoAttach(4,5,6,7);
-  //arm of joy stick connection pins : xL,yL,xR,yR
+  //arm of joy stick connection pins: xL,yL,xR, yR
   arm.JoyStickAttach(A0,A1,A2,A3);
   pinMode(buzzerPin,OUTPUT);
   arm.servo1.write(90);
@@ -297,7 +297,7 @@ void loop() {
 }
 ```
 
-I slightly modified the code from LK Cokoino to create my wired controller code
+I slightly modified the code from LK Cokoino to create my wired controller code.
 
 ## Phone and Wired Controller Code
 
@@ -418,7 +418,7 @@ void setup() {
   BTSerial.begin(9600);
   //arm of servo motor connection pins
   arm.ServoAttach(4,5,6,7);
-  //arm of joy stick connection pins : xL,yL,xR,yR
+  //arm of joy stick connection pins: xL,yL,xR, yR
   arm.JoyStickAttach(A0,A1,A2,A3);
   pinMode(buzzerPin,OUTPUT);
   arm.servo1.write(90);
@@ -467,7 +467,7 @@ void loop() {
 }
 ```
 
-I took my wired controller code and added code for a Bluetooth phone control
+I took my wired controller code and added code for a Bluetooth phone control.
 
 ## Block Code
 
@@ -476,7 +476,7 @@ I took my wired controller code and added code for a Bluetooth phone control
 I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth
 
 # Bill of Materials
-<!---Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
+<!---Here's where you'll list the parts of your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. -->
 
 | **Part** | **Note** | **Price** | **Link** |
@@ -486,7 +486,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Bluetooth Module | Connecting the robot to the app to control it | $15.99 | <a href="https://www.amazon.com/dp/B07VL725T8/ref=as_li_ss_tl?asc_source=01H2RCFWP1ZMCBAR2FTHWM1SF1&ie=UTF8&language=en_US&linkCode=sl1&linkId=fdd96b8c1cdce0e711bfd234114b063e&tag=namespacebran507-20"> Link </a> |
 | SG90 Servos | Rotating to move the robotic arm | $8.99 | <a href="https://www.amazon.com/Servo-Servos-Helicopter-Airplane-Controls/dp/B0BJQ2QTHG?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A2QTZX14X1D97I&th=1"> Link </a> |
 | MG90 Servo | Rotating the base of the robot | $19.99 | <a href="https://www.amazon.com/FPVDrone-Geared-Helicopter-Airplane-Controls/dp/B07P7P6FL4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1EGCWMH51R7JD"> Link </a> |
-| Female to Female Jumper Wires | Connecting all the electric parts of the robot together so they all get power | $5.49 | <a href="https://www.amazon.com/GenBasic-Piece-Female-Jumper-Wires/dp/B077NH83CJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=AAU5UPIIBDRLP&th=1"> Link </a> |
+| Female to Female Jumper Wires | Connecting all the electric parts of the robot so they all get power | $5.49 | <a href="https://www.amazon.com/GenBasic-Piece-Female-Jumper-Wires/dp/B077NH83CJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=AAU5UPIIBDRLP&th=1"> Link </a> |
 | PS2 Thumb Joystick Controller | Provides the user a way of input to control the robot | $2.00 | <a href="https://www.firgelli.com/products/ps2-thumb-joystick-controller?variant=39587692839110&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoo9MoDs0a-YF9gyCvymNTjAXhv_4wPBSAWTyedzlEFcI2iK6A5u3P4"> Link </a> |
 | Turntable | Allows the base of the robot to rotate freely | $9.95 | <a href="https://www.walmart.com/ip/44-lbs-Capacity-3-Swivel-Lazy-Susan-Turntable-Bearing/746423737?wmlspartner=wlpa&selectedSellerId=18079"> Link </a> |
 | AA Batteries | Powering the entire robot | $15.48 | <a href="https://www.amazon.com/AmazonBasics-Performance-Alkaline-Batteries-Count/dp/B00MNV8E0C?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=ATVPDKIKX0DER&th=1"> Link </a> |
@@ -497,7 +497,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 # Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+One of the best parts about Github is that you can view how other people set up their work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
@@ -506,7 +506,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.-->
 
 # Starter Project
 
-<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
+<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/syb-JsTi7dA?si=Cn6BqV8syKB3q4L7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
