@@ -92,6 +92,11 @@ I plan on completeing the physical part of my robotic arm so that I can control 
 # Schematics 
 <!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.-->
 ![Wiring Diagram](WiringDiagram.png)
+![idk](dummy1.png)
+![pluh](dummy2.png)
+![cuh](dummy3.png)
+![bruh](dummy4.png)
+![will anyone actually see me?](dummy5.png)
 
 
 # Code
