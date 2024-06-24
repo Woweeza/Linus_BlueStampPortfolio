@@ -11,7 +11,7 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 ![Headstone Image](Linus_F.jpg)
   
-<!---# Final Milestone
+# Final Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
@@ -31,7 +31,7 @@ My biggest challenge was coding my app and Arduino Nano to communicate with each
 
 ## Next Steps
 
-My next steps are going to be doing a modification to my robot where I can talk to it and use my voice to control it instead of pressing buttons.-->
+My next steps are going to be doing a modification to my robot where I can talk to it and use my voice to control it instead of pressing buttons.
 
 # Second Milestone
 
