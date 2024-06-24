@@ -31,7 +31,7 @@ My biggest challenge was coding my app and Arduino Nano to communicate with each
 
 ## Next Steps
 
-My next steps are going to be doing a modification to my robot where I can talk to it and use my voice to control it instead of pressing buttons.
+My next steps are going to be doing a modification to my robot where I can talk to it and use my voice to control it instead of pressing buttons.-->
 
 # Second Milestone
 
