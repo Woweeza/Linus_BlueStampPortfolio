@@ -1,4 +1,5 @@
 # Phone Controlled Robotic Arm
+
 The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using either a wired controller with 2 joysticks, or a mobile app that can control the robot with buttons without the user physically touching the robot. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid to begin with and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in a language I had never coded in before; c++. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph was honestly just being able to finish everything and have it all run smoothly without encountering too many errors.
 
 
@@ -16,13 +17,21 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE-->
+My final milestone was making my robot Bluetooth-controlled through an app that I made using MIT App Inventor. There is an HCO-5 Bluetooth Module that I added to my robot that will take signals from the phone and send them to the Arduino to make the robot move accordingly.
 
+## Components Used
 
+- 4 Male-Female Jumper Wires: Connect the HCO-5 Bluetooth Module to the Arduino Shield
+- 1 HCO-5 Bluetooth Module: Receive signals from the Samsung phone and send it to the Arduino
+- 1 Samsung Galaxy A03s: Send user inputs to the Arduino Nano via Bluetooth\
+
+## Challenges Faced
+
+My biggest challenge was coding my app and Arduino Nano to communicate with each other using a Bluetooth module. My coding skills were pretty shaky to begin with and I had never dealt with coding this to work with Bluetooth before. On top of all of that, I was writing code in C++ which is a language I had never used before.
+
+## Next Steps
+
+My next steps are going to be doing a modification to my robot where I can talk to it and use my voice to control it instead of pressing buttons.
 
 # Second Milestone
 
