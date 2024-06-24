@@ -107,6 +107,8 @@ I plan on completing the physical part of my robotic arm so that I can control i
 ![bruh](dummy4.png)
 ![Does it matter what I write here?](dummy5.png)
 
+All schematics were from LK Cokoino
+
 
 # Code
 <!---Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
