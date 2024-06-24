@@ -13,8 +13,6 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to YouTube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 My final milestone was making my robot Bluetooth-controlled through an app that I made using MIT App Inventor. There is an HCO-5 Bluetooth Module that I added to my robot that will take signals from the phone and send them to the Arduino to make the robot move accordingly.
