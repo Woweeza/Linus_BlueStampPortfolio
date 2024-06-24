@@ -486,7 +486,7 @@ I took my wired controller code and added code for a Bluetooth phone control.
 
 ## Block Code
 
-![Block_Code](Roboticarmphoneappcode.jpg)
+![Block_Code](dummy.png)
 
 I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth
 
