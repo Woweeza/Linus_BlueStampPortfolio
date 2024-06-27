@@ -484,6 +484,317 @@ void loop() {
 
 I took my wired controller code and added code for a Bluetooth phone control.
 
+## Voice Control Code
+
+```c++
+#include "DFRobot_DF2301Q.h"
+
+//I2C communication
+DFRobot_DF2301Q_I2C DF2301Q;
+int updown=0;
+int leftright=0;
+int openclose=0;
+#include "src/CokoinoArm.h"
+#include <SoftwareSerial.h>
+#define buzzerPin 9
+int state=0;
+CokoinoArm arm;
+int xL,yL,xR,yR;
+SoftwareSerial BTSerial(10,11);
+const int act_max=10;    //Default 10 action,4 the Angle of servo
+int act[act_max][4];    //Only can change the number of action
+int num=0,num_do=0;
+void turnUD(void){
+  if(xL!=512){
+    if(0<=xL && xL<=100){arm.up(10);return;}
+    if(900<xL && xL<=1024){arm.down(10);return;} 
+    if(100<xL && xL<=200){arm.up(20);return;}
+    if(800<xL && xL<=900){arm.down(20);return;}
+    if(200<xL && xL<=300){arm.up(25);return;}
+    if(700<xL && xL<=800){arm.down(25);return;}
+    if(300<xL && xL<=400){arm.up(30);return;}
+    if(600<xL && xL<=700){arm.down(30);return;}
+    if(400<xL && xL<=480){arm.up(35);return;}
+    if(540<xL && xL<=600){arm.down(35);return;} 
+    }
+}
+void turnLR(void){
+  if(yL!=512){
+    if(0<=yL && yL<=100){arm.right(10);return;}
+    if(900<yL && yL<=1024){arm.left(10);return;}  
+    if(100<yL && yL<=200){arm.right(20);return;}
+    if(800<yL && yL<=900){arm.left(20);return;}
+    if(200<yL && yL<=300){arm.right(25);return;}
+    if(700<yL && yL<=800){arm.left(25);return;}
+    if(300<yL && yL<=400){arm.right(30);return;}
+    if(600<yL && yL<=700){arm.left(30);return;}
+    if(400<yL && yL<=480){arm.right(35);return;}
+    if(540<yL && yL<=600){arm.left(35);return;}
+  }
+}
+void turnCO(void){
+  if(arm.servo4.read()>7){
+    if(0<=xR && xR<=100){arm.close(10);return;}
+    if(900<xR && xR<=1024){arm.open(10);return;} 
+    if(100<xR && xR<=200){arm.close(20);return;}
+    if(800<xR && xR<=900){arm.open(20);return;}
+    if(200<xR && xR<=300){arm.close(25);return;}
+    if(700<xR && xR<=800){arm.open(25);return;}
+    if(300<xR && xR<=400){arm.close(30);return;}
+    if(600<xR && xR<=700){arm.open(30);return;}
+    if(400<xR && xR<=480){arm.close(35);return;}
+    if(540<xR && xR<=600){arm.open(35);return;} 
+    }
+  else{arm.servo4.write(8);
+
+  }  
+}
+void date_processing(int *x,int *y){
+  if(abs(512-*x)>abs(512-*y))
+    {*y = 512;}
+  else
+    {*x = 512;}
+}
+void buzzer(int H,int L){
+  while(yR<420){
+    digitalWrite(buzzerPin,HIGH);
+    delayMicroseconds(H);
+    digitalWrite(buzzerPin,LOW);
+    delayMicroseconds(L);
+    yR = arm.JoyStickR.read_y();
+    }
+  while(yR>600){
+    digitalWrite(buzzerPin,HIGH);
+    delayMicroseconds(H);
+    digitalWrite(buzzerPin,LOW);
+    delayMicroseconds(L);
+    yR = arm.JoyStickR.read_y();
+    }
+}
+void C_action(void){
+  if(yR>800){
+    int *p;
+    p=arm.captureAction();
+    for(char i=0;i<4;i++){
+    act[num][i]=*p;
+    p=p+1;     
+    }
+    num++;
+    num_do=num;
+    if(num>=act_max){
+      num=0;
+      buzzer(600,400);
+      }
+    while(yR>600){yR = arm.JoyStickR.read_y();}
+    //Serial.println(act[0][0]);
+  }
+}
+void Do_action(void){
+  if(yR<220){
+    buzzer(200,300);
+    for(int i=0;i<num_do;i++){
+      arm.do_action(act[i],15);
+      }
+    num=0;
+    while(yR<420){yR = arm.JoyStickR.read_y();}
+    for(int i=0;i<2000;i++){
+      digitalWrite(buzzerPin,HIGH);
+      delayMicroseconds(200);
+      digitalWrite(buzzerPin,LOW);
+      delayMicroseconds(300);        
+    }
+  }
+}
+void setup()
+{
+  Serial.begin(9600);
+  BTSerial.begin(9600);
+  //arm of servo motor connection pins
+  arm.ServoAttach(4,5,6,7);
+  //arm of joy stick connection pins : xL,yL,xR,yR
+  arm.JoyStickAttach(A0,A1,A2,A3);
+  pinMode(buzzerPin,OUTPUT);
+  arm.servo1.write(90);
+  arm.servo2.write(90);
+  arm.servo3.write(90);
+  arm.servo4.write(90);
+  //Init the sensor
+  while( !( DF2301Q.begin() ) ) {
+    Serial.println("Communication with device failed, please check connection");
+    delay(3000);
+  }
+  delay(1000);
+  Serial.println("Begin ok!");
+
+  /**
+   * @brief Set voice volume
+   * @param voc - Volume value(1~7)
+   */
+  DF2301Q.setVolume(7);
+
+  Serial.print("Ok");
+
+  /**
+   * @brief Set mute mode
+   * @param mode - Mute mode; set value 1: mute, 0: unmute
+   */
+  DF2301Q.setMuteMode(0);
+
+  /**
+   * @brief Set wake-up duration
+   * @param wakeTime - Wake-up duration (0-255)
+   */
+  DF2301Q.setWakeTime(15);
+
+  /**
+   * @brief Get wake-up duration
+   * @return The currently-set wake-up period
+   */
+  uint8_t wakeTime = 0;
+  wakeTime = DF2301Q.getWakeTime();
+  Serial.print("wakeTime = ");
+  Serial.println(wakeTime);
+
+  /**
+   * @brief Play the corresponding reply audio according to the command word ID
+   * @param CMDID - Command word ID
+   * @note Can enter wake-up state through ID-1 in I2C mode
+   */
+  // DF2301Q.playByCMDID(1);   // Wake-up command
+  DF2301Q.playByCMDID(23);   // Common word ID
+
+}
+
+void loop(){
+  /**
+   * @brief Get the ID corresponding to the command word 
+   * @return Return the obtained command word ID, returning 0 means no valid ID is obtained
+   */
+  uint8_t CMDID = 0;
+  CMDID = DF2301Q.getCMDID();
+  if(0 != CMDID) {
+    Serial.print("CMDID = ");
+    Serial.println(CMDID);
+  }
+  DF2301Q.setVolume(7);
+  switch (CMDID){
+    case 5://first custom commmand
+      Serial.println("arm up");
+      updown = 1;
+      break;
+    case 6://second custom command
+      Serial.println("arm down");
+      updown = 2;
+      break;
+    case 7://third custom command
+      Serial.println("arm left");
+      leftright = 1;
+      break;
+    case 8://fourth custom command
+      Serial.println("arm right");
+      leftright = 2;
+      break;
+    case 9://fifth custom command
+      Serial.println("arm open");
+      openclose = 1;
+      break;
+    case 10://sixth custom command
+      Serial.println("arm close");
+      openclose = 2;
+      break;
+    case 11://seventh custom command
+      Serial.println("arm reset");
+      arm.servo1.write(90);
+      arm.servo2.write(90);
+      arm.servo3.write(90);
+      arm.servo4.write(90);
+      break;
+    case 12://eigth custom command
+      Serial.println("arm stop");
+      updown = 0;
+      leftright = 0;
+      openclose = 0;
+      break;
+    
+  }
+  Serial.print(updown);
+  Serial.print(leftright);
+  Serial.println(openclose);
+    if(BTSerial.available()>0){
+    state=BTSerial.read();
+  }
+  if(state==1){
+    arm.down(20);//moves arm up just says down
+  }
+  if(state==3){
+    arm.up(20);//moves arm down just says up
+  }
+  if(state==5){
+    arm.left(20);
+  }
+  if(state==7){
+    arm.right(20);
+  }
+  if(state==9){
+    arm.open(20);
+  }
+  if(state==11){
+    arm.close(20);
+  }
+  if(state==13){
+    arm.servo1.write(90);
+    arm.servo2.write(90);
+    arm.servo3.write(90);
+    arm.servo4.write(90);
+  }
+  if(arm.servo4.read()<7){
+    arm.servo4.write(8);
+  }
+  //Serial.println(state);
+    xL = arm.JoyStickL.read_x();
+  yL = arm.JoyStickL.read_y();
+  xR = arm.JoyStickR.read_x();
+  yR = arm.JoyStickR.read_y();
+  date_processing(&xL,&yL);
+  date_processing(&xR,&yR);
+  turnUD();
+  turnLR();
+  turnCO();
+  C_action();
+  Do_action();
+  if(updown==1){
+    arm.down(20);//says move down but actually mvoes up
+  }
+  if(updown==2){
+    arm.up(20);//says move up but acutally moves down
+  }
+  if(leftright==1){
+    arm.left(20);
+  }
+  if(leftright==2){
+    arm.right(20);
+  }
+  if(openclose==1){
+    arm.open(20);
+  }
+  if(openclose==2){
+    arm.close(20);
+  }
+  if(updown==0){
+    arm.servo3.write(arm.servo3.read());
+    arm.servo2.write(arm.servo2.read());
+  }
+  if(leftright==0){
+    arm.servo1.write(arm.servo1.read());
+  }
+  if(openclose==0){
+    arm.servo4.write(arm.servo4.read());
+  }
+}  
+```
+
+This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.
+
 ## Block Code
 
 ![Block_Code](dummy.png)
@@ -508,6 +819,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Battery Slot Holder | Holding the batteries in place and taking their power | $1.62 | <a href="https://www.amazon.com/Battery-Holder-Storage-Boxes-Black/dp/B07KNT1TH4"> Link </a> |
 | Screws and nuts | Holding together the robot | $38.99 | <a href="https://www.amazon.com/Deluxe-Hardware-Assortment-Professional-Washers/dp/B076CVQZWG?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1C1KOESPL5YO9"> Link </a> |
 | Columns | Holding up different parts of the robot | $11.99 | <a href="https://www.amazon.com/GeeekPi-Standoffs-Assortment-Box，Male-Female-Screwdriver/dp/B07PHBTTGV?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AOP0CH6UTUPHT"> Link </a> |
+| WS-2520-TR | Recognizing voice to control the robot arm | $16.90 | <a href="https://www.dfrobot.com/product-2665.html?tracking=snqbbMs0lddTvr3eSVRKmzR6PWWGRVs9bZLm6dbDWV7auVnyVbcFCdESMTPnwDyr"> Link </a> |
 <!---| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
