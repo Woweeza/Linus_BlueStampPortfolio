@@ -485,7 +485,6 @@ void loop() {
 I took my wired controller code and added code for a Bluetooth phone control.
 
 ## Voice Control Code
-
 ```c++
 #include "DFRobot_DF2301Q.h"
 
@@ -506,44 +505,44 @@ int act[act_max][4];    //Only can change the number of action
 int num=0,num_do=0;
 void turnUD(void){
   if(xL!=512){
-    if(0<=xL && xL<=100){arm.up(10);return;}
-    if(900<xL && xL<=1024){arm.down(10);return;} 
-    if(100<xL && xL<=200){arm.up(20);return;}
-    if(800<xL && xL<=900){arm.down(20);return;}
+    if(0<=xL && xL<=100){arm.up(35);return;}
+    if(900<xL && xL<=1024){arm.down(35);return;} 
+    if(100<xL && xL<=200){arm.up(30);return;}
+    if(800<xL && xL<=900){arm.down(30);return;}
     if(200<xL && xL<=300){arm.up(25);return;}
     if(700<xL && xL<=800){arm.down(25);return;}
-    if(300<xL && xL<=400){arm.up(30);return;}
-    if(600<xL && xL<=700){arm.down(30);return;}
-    if(400<xL && xL<=480){arm.up(35);return;}
-    if(540<xL && xL<=600){arm.down(35);return;} 
+    if(300<xL && xL<=400){arm.up(20);return;}
+    if(600<xL && xL<=700){arm.down(20);return;}
+    if(400<xL && xL<=480){arm.up(10);return;}
+    if(540<xL && xL<=600){arm.down(10);return;} 
     }
 }
 void turnLR(void){
   if(yL!=512){
-    if(0<=yL && yL<=100){arm.right(10);return;}
-    if(900<yL && yL<=1024){arm.left(10);return;}  
-    if(100<yL && yL<=200){arm.right(20);return;}
-    if(800<yL && yL<=900){arm.left(20);return;}
+    if(0<=yL && yL<=100){arm.right(35);return;}
+    if(900<yL && yL<=1024){arm.left(35);return;}  
+    if(100<yL && yL<=200){arm.right(30);return;}
+    if(800<yL && yL<=900){arm.left(30);return;}
     if(200<yL && yL<=300){arm.right(25);return;}
     if(700<yL && yL<=800){arm.left(25);return;}
-    if(300<yL && yL<=400){arm.right(30);return;}
-    if(600<yL && yL<=700){arm.left(30);return;}
-    if(400<yL && yL<=480){arm.right(35);return;}
-    if(540<yL && yL<=600){arm.left(35);return;}
+    if(300<yL && yL<=400){arm.right(20);return;}
+    if(600<yL && yL<=700){arm.left(20);return;}
+    if(400<yL && yL<=480){arm.right(10);return;}
+    if(540<yL && yL<=600){arm.left(10);return;}
   }
 }
 void turnCO(void){
   if(arm.servo4.read()>7){
-    if(0<=xR && xR<=100){arm.close(10);return;}
-    if(900<xR && xR<=1024){arm.open(10);return;} 
-    if(100<xR && xR<=200){arm.close(20);return;}
-    if(800<xR && xR<=900){arm.open(20);return;}
+    if(0<=xR && xR<=100){arm.close(35);return;}
+    if(900<xR && xR<=1024){arm.open(35);return;} 
+    if(100<xR && xR<=200){arm.close(30);return;}
+    if(800<xR && xR<=900){arm.open(30);return;}
     if(200<xR && xR<=300){arm.close(25);return;}
     if(700<xR && xR<=800){arm.open(25);return;}
-    if(300<xR && xR<=400){arm.close(30);return;}
-    if(600<xR && xR<=700){arm.open(30);return;}
-    if(400<xR && xR<=480){arm.close(35);return;}
-    if(540<xR && xR<=600){arm.open(35);return;} 
+    if(300<xR && xR<=400){arm.close(20);return;}
+    if(600<xR && xR<=700){arm.open(20);return;}
+    if(400<xR && xR<=480){arm.close(10);return;}
+    if(540<xR && xR<=600){arm.open(10);return;} 
     }
   else{arm.servo4.write(8);
 
