@@ -123,8 +123,9 @@ I plan on completing the physical part of my robotic arm so that I can control i
 ![cuh](dummy3.png)
 ![bruh](dummy4.png)
 ![Does it matter what I write here?](dummy5.png)
+![erm what the sigma](dummy.png)
 
-All schematics were from LK Cokoino
+The first 5 schematics were from LK Cokoino. The sixth schematic was from AutoDesk Instructables.
 
 
 # Code
