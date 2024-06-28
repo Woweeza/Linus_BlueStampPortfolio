@@ -1,6 +1,6 @@
 # Phone Controlled Robotic Arm
 
-The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using either a wired controller with 2 joysticks, or a mobile app that can control the robot with buttons without the user physically touching the robot. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid to begin with and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in a language I had never coded in before; c++. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph was honestly just being able to finish everything and have it all run smoothly without encountering too many errors.
+The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using either a wired controller with 2 joysticks, or a mobile app that can control the robot with buttons without the user physically touching the robot. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid to begin with and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in a language I had never coded in before; c++. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph Was being able to code my voice control in C++ with pretty much no outside help at all.
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -11,6 +11,25 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 ![Headstone Image](Linus_F.jpg)
   
+# Modification
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+My modification was adding voice control to my robot arm. I used a WS-2520-TR voice recognition module to send my voice to the Arduino. I could tell the arm to move in different directions and could reset itself to 90 degrees as well. 
+
+## Components Used
+
+- 4 Female-Female Jumper Wires: Connect to WS-2520-TR voice recognition module to the Arduino
+- 1 WS-2520-TR Voice Recognition Modules recognize my voice and send it to the Arduino.
+
+## Challenges Faced
+
+My biggest challenge was with the Arduino software itself. The Arduino software wasn't working on my computer so all the code started bugging in bizarre ways. I spent 3 hours just trying a bunch of different stuff. But in the end, all I had to do was delete Arduino and reinstall it.
+
+## Next Steps
+
+My next steps are going to be maybe adding another modification and if I can't, I will prepare and practice for Demo night.
+
 # Final Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -855,7 +874,7 @@ My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Bo
 
 ##  Challenges Faced
 
-The biggest challenge that I faced was trying to build the circuit on the breadboard and Arduino Uno becuase I had never done anything like it before so I didn't fully understand how a breadboard worked and how to make it so that I could put multiple circuits on one breadboard so that they would both work but not interfere with each other. Another challenge was mounting the Arduino Proto Shield onto the Arduino Uno because I had soldered the female pins on but they were a little bit offset so the female and male pins would not fit together. I had to resolder it all so that they would line up.
+The biggest challenge that I faced was trying to build the circuit on the breadboard and Arduino Uno becuase I had never done anything like it before so I didn't fully understand how a breadboard worked and how to make it so that I could put multiple circuits on one breadboard so that they would both work but not interfere with each other. Another challenge was mounting the Arduino Proto Shield onto the Arduino Uno because I had soldered the female pins on but they were a little bit offset so the female and male pins would not fit together. I had to solder it all again so that they would line up.
 
 ## Next Steps
 
