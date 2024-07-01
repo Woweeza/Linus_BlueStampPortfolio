@@ -13,7 +13,7 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
   
 # Modification
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jsjIlLcYMIU?si=YCobMqWf_-OzjrIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 My modification was adding voice control to my robot arm. I used a WS-2520-TR voice recognition module to send my voice to the Arduino. I could tell the arm to move in different directions and could tell it to reset all of its servos to 90 degrees as well. 
 
