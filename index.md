@@ -1,6 +1,6 @@
 # Phone Controlled Robotic Arm
 
-The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using a wired controller with 2 joysticks or a mobile app that can control the robot with buttons without the user physically touching it. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid, and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in C++ which was as language that I had never coded in before.. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph Was being able to code my voice control in C++ with pretty much no outside help at all.
+The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using a wired controller with 2 joysticks or a mobile app that can control the robot with buttons without the user physically touching it. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid, and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in C++ which was was language that I had never coded in before. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph Was being able to code my voice control in C++ with pretty much no outside help at all.
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -15,12 +15,12 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-My modification was adding voice control to my robot arm. I used a WS-2520-TR voice recognition module to send my voice to the Arduino. I could tell the arm to move in different directions and could reset itself to 90 degrees as well. 
+My modification was adding voice control to my robot arm. I used a WS-2520-TR voice recognition module to send my voice to the Arduino. I could tell the arm to move in different directions and could tell it to reset all of its servos to 90 degrees as well. 
 
 ## Components Used
 
 - 4 Female-Female Jumper Wires: Connect to WS-2520-TR voice recognition module to the Arduino
-- 1 WS-2520-TR Voice Recognition Modules recognize my voice and send it to the Arduino.
+- 1 WS-2520-TR Voice Recognition Modules: Recognize my voice and send it to the Arduino
 
 ## Challenges Faced
 
@@ -818,7 +818,7 @@ This code is an updated version of the code above. Part of the updated part is b
 
 ![Block_Code](dummy123.png)
 
-I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth
+I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth.
 
 # Bill of Materials
 <!---Here's where you'll list the parts of your project. To add more rows, just copy and paste the example rows below.
