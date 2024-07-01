@@ -1,6 +1,6 @@
 # Phone Controlled Robotic Arm
 
-The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using either a wired controller with 2 joysticks, or a mobile app that can control the robot with buttons without the user physically touching the robot. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid to begin with and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in a language I had never coded in before; c++. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph Was being able to code my voice control in C++ with pretty much no outside help at all.
+The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using a wired controller with 2 joysticks or a mobile app that can control the robot with buttons without the user physically touching it. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid, and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in C++ which was as language that I had never coded in before.. But I persevered and with the help of some of my Bluestamp counselors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because eventually, I would figure it out. My biggest triumph Was being able to code my voice control in C++ with pretty much no outside help at all.
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -24,7 +24,7 @@ My modification was adding voice control to my robot arm. I used a WS-2520-TR vo
 
 ## Challenges Faced
 
-My biggest challenge was with the Arduino software itself. The Arduino software wasn't working on my computer so all the code started bugging in bizarre ways. I spent 3 hours just trying a bunch of different stuff. But in the end, all I had to do was delete Arduino and reinstall it.
+My biggest challenge was with the Arduino software itself. The Arduino software wasn't working on my computer so all the code started bugging in bizarre ways. I spent 3 hours troubleshooting it. But ultimately, I decided to start over and discovered that reinstalling Arduino was the solution.
 
 ## Next Steps
 
@@ -32,7 +32,7 @@ My next steps are going to be maybe adding another modification and if I can't, 
 
 # Final Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=v7GNhi7AYkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ddody_513Wo?si=dr0Joc5v0mifrqbb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 My final milestone was making my robot Bluetooth-controlled through an app that I made using MIT App Inventor. There is an HCO-5 Bluetooth Module that I added to my robot that will take signals from the phone and send them to the Arduino to make the robot move accordingly.
 
