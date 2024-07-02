@@ -15,6 +15,8 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jsjIlLcYMIU?si=YCobMqWf_-OzjrIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## Summary
+
 My modification was adding voice control to my robot arm. I used a WS-2520-TR voice recognition module to send my voice to the Arduino. I could tell the arm to move in different directions and could tell it to reset all of its servos to 90 degrees as well. 
 
 ## Components Used
@@ -34,17 +36,19 @@ My next steps are going to be maybe adding another modification and if I can't, 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ddody_513Wo?si=dr0Joc5v0mifrqbb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-My final milestone was making my robot Bluetooth-controlled through an app that I made using MIT App Inventor. There is an HCO-5 Bluetooth Module that I added to my robot that will take signals from the phone and send them to the Arduino to make the robot move accordingly.
+## Summary
+
+My final milestone was making my robot Bluetooth-controlled through an app that I made using MIT App Inventor. There is an HC-05 Bluetooth Module that I added to my robot that will take signals from the phone and send them to the Arduino to make the robot move accordingly.
 
 ## Components Used
 
-- 4 Male-Female Jumper Wires: Connect the HCO-5 Bluetooth Module to the Arduino Shield
-- 1 HCO-5 Bluetooth Module: Receive signals from the Samsung phone and send it to the Arduino
-- 1 Samsung Galaxy A03s: Send user inputs to the Arduino Nano via Bluetooth\
+- 4 Male-Female Jumper Wires: Connect the HC-05 Bluetooth Module to the Arduino Shield
+- 1 HC0-5 Bluetooth Module: Receive signals from the Samsung phone and send it to the Arduino
+- 1 Samsung Galaxy A03s: Send user inputs to the Arduino Nano via Bluetooth
 
 ## Challenges Faced
 
-My biggest challenge was coding my app and Arduino Nano to communicate with each other using a Bluetooth module. My coding skills were pretty shaky to begin with and I had never dealt with coding this to work with Bluetooth before. On top of all of that, I was writing code in C++ which is a language I had never used before.
+My biggest challenge was coding my app and Arduino Nano to communicate with each other using a Bluetooth module. My coding skills were pretty shaky to begin with and I had never dealt with coding Bluetooth before. On top of all of that, I was writing code in C++ which is a language I had never used before.
 
 ## Next Steps
 
@@ -72,11 +76,11 @@ My second milestone was finishing assembling my 3 jointed robotic arm and making
 
 ## Challenges Faced
 
-The biggest challenge that I faced was when I used the controller the close the claw of the arm, the claw would close but the servo would be able to rotate a little bit more so the other servos in the arm would start rotating to try to compensate for the claw not being able to close. The way that I fixed it was by making an if else statement in the code so that the servo was only allowed to rotate so much so that the claw would close but if it kept on trying to close, it would just stop the operation of that servo and rotate it back a little bit and then resume the operation of the servo.
+The biggest challenge that I faced was when I used the controller to close the claw of the arm, the claw would close all the way, but the servo would be able to rotate a little bit more so the other servos in the arm would start rotating to try to compensate for the claw not being able to close. The way that I fixed it was by making an if else statement in the code only allowed the claw to close a certain amount.
 
 ## Next Steps
 
-I plan on hooking the robot arm up to Bluetooth on a phone so that I can program an app to control the robot remotely on a phone.
+I plan on hooking the robot arm up to Bluetooth on a phone so that I can program an app to control the robot remotely.
 
 # First Milestone
 
@@ -92,13 +96,13 @@ I plan on hooking the robot arm up to Bluetooth on a phone so that I can program
 
 ## Summary
 
-My first milestone was assembling the base of the robotic arm so that I could test it and make sure that the Arduino Nano, the Arduino Shield, the first servo, and the batteries were all working properly. It was also so I could test uploading the code from the Arduino software to the Arduino Nano to make sure that it was all connected properly
+My first milestone was assembling the base of the robotic arm so that I could test it and make sure that the Arduino Nano, the Arduino Shield, the first servo, and the batteries were all working properly. It was also so I could test uploading the code from the Arduino software to the Arduino Nano to make sure that it was all connected properly.
 
 ## Components Used
 
 - 1 Arduino Nano: Controls all the servos
 - 1 Arduino Shield: Receives power from batteries and hooks up to all the wires
-- 1 USB cable: Receives signals and power from the laptop
+- 1 USB cable: Receives signals and power from a laptop
 - 1 Servo: Rotate the base of the arm
 - Wooden Cutouts: Creates the bulk of the physical part of the base
 - Batteries: Powers everything
@@ -109,7 +113,7 @@ My first milestone was assembling the base of the robotic arm so that I could te
 
 ## Challenges Faced
 
-The biggest challenge that I faced was when I was assembling the base, I kept screwing in the wrong servo arm into the hole where it is supposed to go. So when I realized my mistake, I would have to take apart half the base just to put in the right servo arm. The screws that kept the servo arm in place were also super tiny so it was really hard getting them in and out. I put the wrong servo arm in twice before I got the right one in.
+The biggest challenge that I faced was when I was assembling the base, I kept screwing in the wrong servo arm into the wrong hole. So when I realized my mistake, I would have to take apart half the base just to put in the right servo arm. The screws that kept the servo arm in place were also super tiny so it was really hard getting them in and out. I put the wrong servo arm in twice before I got the right one in.
 
 ## Next Steps
 
@@ -812,7 +816,7 @@ void loop(){
 }  
 ```
 
-This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.
+This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own. It includes the voice control that I added.
 
 ## Block Code
 
@@ -858,20 +862,20 @@ To watch the BSE tutorial on how to create a portfolio, click here.-->
 
 ## Summary 
 
-My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Board and Arduino Shield stacked on top of each other and they are connected to a breadboard with a circuit where a red LED light lights up when you press a button. It is meant to have one input of my choice: a switch, button, pressure sensor, and much more. And one output of my choice could be a motor or a light. The Arduino Uno Board came pre-built and I just had to connect wires to it, but I had to solder all the parts onto my Arduino Shield to build it. 
+My starter project was the BlueStamp Arduino Starter. There is an Arduino Uno Board and Arduino Shield stacked on top of each other and they are connected to a breadboard with a circuit where a red LED light turns on when you press a button. It is meant to have one input of my choice: a switch, button, pressure sensor, and much more. And one output of my choice could be a motor or a light. The Arduino Uno Board came pre-built and I just had to connect wires to it, but I had to solder all the parts onto my Arduino Shield to build it. 
 
 ## Components Used
 
-- 1 Arduino Uno
-- 1 USB A->B cable
-- 1 Arduino Proto Shield
-- 1 Breadboard
-- 3 Buttons
-- 3 LEDs
-- 4 Resistors
-- 2 Ceramic Capacitors
-- 2 8-pin female 0.1" headers (1*6)
-- 5 5-pin female 0.1" headers (1*8)
+- 1 Arduino Uno: Controls everything
+- 1 USB A->B cable: Connects the Arduino Uno to my laptop so I can code it
+- 1 Arduino Proto Shield: Extends the capability of the Arduino Uno
+- 1 Breadboard: Provides a space where all the wires can be connected
+- 3 Buttons: 2 for the Arduino Proto Shield and one to turn on the light
+- 3 LEDs: 2 for the Arduino Proto Shield and one to get turned on by the button
+- 4 Resistors: Provides electrical resistance
+- 2 Ceramic Capacitors: Mainly used for high stability performances and low-loss devices
+- 2 8-pin female 0.1" headers (1*6): Added to the Arduino Shield to make it function
+- 5 5-pin female 0.1" headers (1*8): Added to the Arduino Shield to make it function
 
 ##  Challenges Faced
 
@@ -879,4 +883,4 @@ The biggest challenge that I faced was trying to build the circuit on the breadb
 
 ## Next Steps
 
-I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, and code the arm so that the phone can make the arm work remotely.
+I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, code the arm so that the phone can make the arm work remotely, and add at least on modification.
