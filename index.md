@@ -121,15 +121,22 @@ I plan on completing the physical part of my robotic arm so that I can control i
 
 # Schematics 
 <!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resources for creating professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.-->
+## Figure 1: Wiring Diagram
 ![Wiring Diagram](WiringDiagram.png)
+## Figure 2: Joystick Diagram
 ![idk](dummy1.png)
+## Figure 3: Arduino Nano Diagram
 ![pluh](dummy2.png)
+## Figure 3: Servos and Servo Wiring Diagrams
 ![cuh](dummy3.png)
+## Figure 4: Servo Diagram
 ![bruh](dummy4.png)
+## Figure 5: More Servo Diagrams 
 ![Does it matter what I write here?](dummy5.png)
+## Figure 6: Voice Control Wiring Diagram
 ![erm what the sigma](dummy.png)
 
-The first 5 schematics were from LK Cokoino. The sixth schematic was from AutoDesk Instructables.
+The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructables.
 
 
 # Code
