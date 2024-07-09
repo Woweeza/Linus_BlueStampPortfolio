@@ -13,6 +13,33 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
   
 # Modification
 
+## Summary
+
+My modification was putting my robotic arm on a car. It used 2 motors and I used a motor driver to control them. I could use both Bluetooth and voice control to make the car go forward, backward, turn left, and turn right.
+
+## Components used
+
+- 1 Chassis: Provide a base for the arm to sit on
+- 2 Wheels: Allow the car to move
+- 2 Velocimetry Code Wheels
+- 2 DC Gear Motors: Spin the wheels to move the car
+- 1 9 Volt Battery: Power the car
+- 1 Universal Wheel: Third wheel to balance the car
+- 1 Switch: Turn the battery on and off in the car
+- Screws, Nuts, Fasteners, and Spacers: Hold the car together
+- Velcro and Hot Glue: Hold the battery, motor driver, and arm to the chassis
+- 1 L298N Motor Driver: Contorl the motors
+
+## Challenges Faced
+
+The biggest challenge that I faced was having almost no pins in my Arduino Nano or Arduino Shield to control the motor. I fixed this challenge by moving around some pins and different methods in the software to control the speed of my motors instead of just plugging them into pins that I didn't have.
+
+## Next Steps
+
+My next steps are going to be practicing and preparing for Demo night and finishing up my portfolio.
+
+# Modification
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jsjIlLcYMIU?si=YCobMqWf_-OzjrIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Summary
@@ -30,7 +57,7 @@ My biggest challenge was with the Arduino software itself. The Arduino software 
 
 ## Next Steps
 
-My next steps are going to be maybe adding another modification and if I can't, I will prepare and practice for Demo night.
+My next steps are going to be maybe adding another modification and if I can't, I will prepare and practice for Demo night. I will also clean up my robot so that it looks more visually appealing and the wiring isn't so chaotic.
 
 # Final Milestone
 
