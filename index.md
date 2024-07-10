@@ -367,7 +367,7 @@ I slightly modified the code from LK Cokoino to create my wired controller code.
 
 ## Phone Control Code
 
-```C++
+<pre style="background:#fdfdfd; border: none; height: 40pc">
 #include "src/CokoinoArm.h"
 #include <SoftwareSerial.h>
 #define buzzerPin 9
@@ -537,12 +537,12 @@ void loop() {
   C_action();
   Do_action();
 }
-```
+</pre>
     
 I took my wired controller code and added code for a Bluetooth phone control.
 ## Voice Control Code
 
-```C++
+<pre style="background:#fdfdfd; border: none; height: 40pc">
 #include "DFRobot_DF2301Q.h"
 
 //I2C communication
@@ -847,7 +847,7 @@ void loop(){
     arm.servo4.write(arm.servo4.read());
   }
 }  
-```
+</pre>
 
 This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
 
