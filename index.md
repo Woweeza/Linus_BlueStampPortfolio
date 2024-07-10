@@ -1,6 +1,6 @@
 # Phone Controlled Robotic Arm
 
-The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using a wired controller with 2 joysticks or a mobile app that can control the robot with buttons without the user physically touching it. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid, and I had never dealt with anything remotely close to Bluetooth in my life. I was also coding in C++ which was was language that I had never coded in before. But I persevered and with the help of some of my Bluestamp instructors, I was able to finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because I would eventually figure things out. My biggest triumph was being able to code my voice control in C++ with pretty much no outside help at all.
+The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has 4 rotational degrees of freedom; the bottom which allows the robot to rotate left and right, the 2 joints in the arm that will enable the arm to bend up and down, and the claw which can open and close. It can be controlled using a wired controller with 2 joysticks or a mobile app that can control the robot with buttons without the user physically touching it. My biggest challenge was coding both my Arduino Nano and my mobile app so that they could communicate with each other via a Bluetooth module. This is because my coding skills weren't solid, and I had never dealt with anything remotely close to Bluetooth. I was also coding in C++, a language I had never coded in before. But I persevered and with the help of some of my Bluestamp instructors, I could finish the app and Arduino code and get it all to function within a week. My biggest takeaway was that I could really learn and do so much by jumping into new things that were scary and uncomfortable because I would eventually figure things out. My biggest triumph was being able to code my voice control in C++ with pretty much no outside help at all.
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -11,7 +11,7 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 ![Headstone Image](Linus_F.jpg)
   
-# Modification
+# Second Modification
 
 ## Summary
 
@@ -38,7 +38,7 @@ The biggest challenge that I faced was having almost no pins in my Arduino Nano 
 
 My next steps are going to be practicing and preparing for Demo night and finishing up my portfolio.
 
-# Modification
+# First Modification
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jsjIlLcYMIU?si=YCobMqWf_-OzjrIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -170,7 +170,34 @@ The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructabl
 <!---Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
 
 ## Wired Controller Code
-```c++
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Pages Site</title>
+    <style>
+        .code-block {
+            overflow-x: auto;
+            white-space: pre;
+            width: 750px;
+            height: 475px;
+            max-height: 475px;
+            background-color: #1E1E1E; /* Optional: Set background color */
+            padding: 5px;
+            border: 2px solid #CCCCCC;
+            border-radius: 10px; /* Optional: Rounded corners */
+            font-family: Consolas, Monaco, 'Andale Mono', monospace; /* Example font */
+            font-size: 14px; /* Example font size */
+        }
+    </style>
+</head>
+<body>
+    <h1>Code</h1>
+    <div class="code-block">
+        <pre>
+<span style="color:#FFFFFF;"><b>Arduino Uno & H-Bridge (car)</b></span>
+            <code>
+<span style="color:#FFFFFF;">
 /*
  * This code applies to the Cokoino mechanical arm
  * Through this link you can download the source code:
@@ -362,7 +389,12 @@ void loop() {
   Do_action();
   Serial.println(arm.servo4.read());
 }
-```
+</span>
+            </code>
+        </pre>
+    </div>
+</body>
+</html>
 
 I slightly modified the code from LK Cokoino to create my wired controller code.
 
@@ -917,4 +949,4 @@ The biggest challenge that I faced was trying to build the circuit on the breadb
 
 ## Next Steps
 
-I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, code the arm so that the phone can make the arm work remotely, and add at least on modification.
+I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, code the arm so that the phone can make the arm work remotely, and add at least one modification.
