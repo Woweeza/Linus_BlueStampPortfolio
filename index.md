@@ -165,6 +165,8 @@ I plan on completing the physical part of my robotic arm so that I can control i
 
 The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructables.
 
+<a id="code"></a>
+
 # Final Code
 
 <pre style="background:fdfdfd; border:none; height:40pc">
