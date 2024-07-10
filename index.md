@@ -612,6 +612,7 @@ void loop(){
   }
 }  
 </pre>
+</pre>
 
 This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
 
