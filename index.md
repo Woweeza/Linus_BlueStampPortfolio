@@ -165,33 +165,11 @@ I plan on completing the physical part of my robotic arm so that I can control i
 
 The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructables.
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
-    <style>
-        .code-block {
-            overflow-x: auto;
-            white-space: pre;
-            width: 750px;
-            height: 475px;
-            max-height: 475px;
-            padding: 5px;
-            border: 2px solid #CCCCCC;
-            border-radius: 10px; /* Optional: Rounded corners */
-            font-family: Consolas, Monaco, 'Andale Mono', monospace; /* Example font */
-            font-size: 14px; /* Example font size */
-        }
-    </style>
-</head>
-<body>
-    <h1>Code</h1>
-    <div class="code-block">
-        <pre>
-<span style="color:#606C71;"><b>Wired Controller Code</b></span>
-            <code>
-<span style="color:#606C71;">
+# Code
+
+## Wired Controller Code
+
+<pre style="background:#fdfdfd; border: none; height: 40pc">
 /*
  * This code applies to the Cokoino mechanical arm
  * Through this link you can download the source code:
@@ -383,40 +361,13 @@ void loop() {
   Do_action();
   Serial.println(arm.servo4.read());
 }
-</span>
-            </code>
-        </pre>
-    </div>
+</pre>
 
-    I slightly modified the code from LK Cokoino to create my wired controller code.
+I slightly modified the code from LK Cokoino to create my wired controller code.
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
-    <style>
-        .code-block {
-            overflow-x: auto;
-            white-space: pre;
-            width: 750px;
-            height: 475px;
-            max-height: 475px;
-            padding: 5px;
-            border: 2px solid #CCCCCC;
-            border-radius: 10px; /* Optional: Rounded corners */
-            font-family: Consolas, Monaco, 'Andale Mono', monospace; /* Example font */
-            font-size: 14px; /* Example font size */
-        }
-    </style>
-</head>
-<body>
-    <h1>Code</h1>
-    <div class="code-block">
-        <pre>
-<span style="color:#606C71;"><b>Phone Control Code</b></span>
-            <code>
-<span style="color:#606C71;">
+## Phone Control Code
+
+```C++
 #include "src/CokoinoArm.h"
 #include <SoftwareSerial.h>
 #define buzzerPin 9
@@ -586,40 +537,12 @@ void loop() {
   C_action();
   Do_action();
 }
-</span>
-            </code>
-        </pre>
-    </div>
+```
     
-    I took my wired controller code and added code for a Bluetooth phone control.
+I took my wired controller code and added code for a Bluetooth phone control.
+## Voice Control Code
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
-    <style>
-        .code-block {
-            overflow-x: auto;
-            white-space: pre;
-            width: 750px;
-            height: 475px;
-            max-height: 475px;
-            padding: 5px;
-            border: 2px solid #CCCCCC;
-            border-radius: 10px; /* Optional: Rounded corners */
-            font-family: Consolas, Monaco, 'Andale Mono', monospace; /* Example font */
-            font-size: 14px; /* Example font size */
-        }
-    </style>
-</head>
-<body>
-    <h1>Code</h1>
-    <div class="code-block">
-        <pre>
-<span style="color:#606C71;"><b>Voice Control Code</b></span>
-            <code>
-<span style="color:#606C71;">
+```C++
 #include "DFRobot_DF2301Q.h"
 
 //I2C communication
@@ -924,16 +847,10 @@ void loop(){
     arm.servo4.write(arm.servo4.read());
   }
 }  
-</span>
-            </code>
-        </pre>
-    </div>
-</body>
-</html>
+```
 
-    This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
+This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
 
-    sdkfasdlf/j
 ## Block Code
 
 ![Block_Code](dummy123.png)
