@@ -165,393 +165,21 @@ I plan on completing the physical part of my robotic arm so that I can control i
 
 The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructables.
 
-# Code
+# Final Code
 
-## Wired Controller Code
-
-<pre style="background:#fdfdfd; border: none; height: 40pc">
-/*
- * This code applies to the Cokoino mechanical arm
- * Through this link you can download the source code:
- * https://github.com/Cokoino/CKK0006
- * Company website:
- * http://cokoino.com/
- *                                     ________
- *                         ----|servo4| 
- *                        |            --------
- *                    |servo3|   
- *                        |
- *                        |
- *                    |servo2|
- *                        |
- *                        |
- *                  ___________
- *                  |  servo1 |
- *         ____________________
- *         ____________________
- * Functions:
- * arm.servo1.read();   //read the servo of angle
- * arm.servo2.read();
- * arm.servo3.read();
- * arm.servo4.read();
- * 
- * arm.servo1.write(angle);   //servo run
- * arm.servo2.write(angle);
- * arm.servo3.write(angle);
- * arm.servo4.write(angle);
- * 
- * arm.left(speed);    //perform the action 
- * arm.right(speed);
- * arm.up(speed);
- * arm.down(speed);
- * arm.open(speed);
- * arm.close(speed);
- * 
- * arm.captureAction();    //capture the current action,return pointer array
- * arm.do_action(int *p,int speed);  //P is a pointer to the array
- * 
- * arm.JoyStickL.read_x(); //Returns joystick numerical
- * arm.JoyStickL.read_y();
- * arm.JoyStickR.read_x();
- * arm.JoyStickR.read_y();
- */
-#include "src/CokoinoArm.h"
-#define buzzerPin 9
-
-CokoinoArm arm;
-int xL,yL,xR,yR;
-
-const int act_max=10;    //Default 10 action,4 the Angle of servo
-int act[act_max][4];    //Only can change the number of action
-int num=0,num_do=0;
-///////////////////////////////////////////////////////////////
-void turnUD(void){
-  if(xL!=512){
-    if(0<=xL && xL<=100){arm.up(10);return;}
-    if(900<xL && xL<=1024){arm.down(10);return;} 
-    if(100<xL && xL<=200){arm.up(20);return;}
-    if(800<xL && xL<=900){arm.down(20);return;}
-    if(200<xL && xL<=300){arm.up(25);return;}
-    if(700<xL && xL<=800){arm.down(25);return;}
-    if(300<xL && xL<=400){arm.up(30);return;}
-    if(600<xL && xL<=700){arm.down(30);return;}
-    if(400<xL && xL<=480){arm.up(35);return;}
-    if(540<xL && xL<=600){arm.down(35);return;} 
-    }
-}
-///////////////////////////////////////////////////////////////
-void turnLR(void){
-  if(yL!=512){
-    if(0<=yL && yL<=100){arm.right(0);return;}
-    if(900<yL && yL<=1024){arm.left(0);return;}  
-    if(100<yL && yL<=200){arm.right(5);return;}
-    if(800<yL && yL<=900){arm.left(5);return;}
-    if(200<yL && yL<=300){arm.right(10);return;}
-    if(700<yL && yL<=800){arm.left(10);return;}
-    if(300<yL && yL<=400){arm.right(15);return;}
-    if(600<yL && yL<=700){arm.left(15);return;}
-    if(400<yL && yL<=480){arm.right(20);return;}
-    if(540<yL && yL<=600){arm.left(20);return;}
-  }
-}
-///////////////////////////////////////////////////////////////
-
-void turnCO(void){
-  if(arm.servo4.read()>7){
-    if(0<=xR && xR<=100){arm.close(0);return;}
-    if(900<xR && xR<=1024){arm.open(0);return;} 
-    if(100<xR && xR<=200){arm.close(5);return;}
-    if(800<xR && xR<=900){arm.open(5);return;}
-    if(200<xR && xR<=300){arm.close(10);return;}
-    if(700<xR && xR<=800){arm.open(10);return;}
-    if(300<xR && xR<=400){arm.close(15);return;}
-    if(600<xR && xR<=700){arm.open(15);return;}
-    if(400<xR && xR<=480){arm.close(20);return;}
-    if(540<xR && xR<=600){arm.open(20);return;} 
-    }
-  else{arm.servo4.write(8);
-
-  }  
-}
-///////////////////////////////////////////////////////////////
-void date_processing(int *x,int *y){
-  if(abs(512-*x)>abs(512-*y))
-    {*y = 512;}
-  else
-    {*x = 512;}
-}
-///////////////////////////////////////////////////////////////
-void buzzer(int H,int L){
-  while(yR<420){
-    digitalWrite(buzzerPin,HIGH);
-    delayMicroseconds(H);
-    digitalWrite(buzzerPin,LOW);
-    delayMicroseconds(L);
-    yR = arm.JoyStickR.read_y();
-    }
-  while(yR>600){
-    digitalWrite(buzzerPin,HIGH);
-    delayMicroseconds(H);
-    digitalWrite(buzzerPin,LOW);
-    delayMicroseconds(L);
-    yR = arm.JoyStickR.read_y();
-    }
-}
-///////////////////////////////////////////////////////////////
-void C_action(void){
-  if(yR>800){
-    int *p;
-    p=arm.captureAction();
-    for(char i=0;i<4;i++){
-    act[num][i]=*p;
-    p=p+1;     
-    }
-    num++;
-    num_do=num;
-    if(num>=act_max){
-      num=0;
-      buzzer(600,400);
-      }
-    while(yR>600){yR = arm.JoyStickR.read_y();}
-    //Serial.println(act[0][0]);
-  }
-}
-///////////////////////////////////////////////////////////////
-void Do_action(void){
-  if(yR<220){
-    buzzer(200,300);
-    for(int i=0;i<num_do;i++){
-      arm.do_action(act[i],15);
-      }
-    num=0;
-    while(yR<420){yR = arm.JoyStickR.read_y();}
-    for(int i=0;i<2000;i++){
-      digitalWrite(buzzerPin,HIGH);
-      delayMicroseconds(200);
-      digitalWrite(buzzerPin,LOW);
-      delayMicroseconds(300);        
-    }
-  }
-}
-///////////////////////////////////////////////////////////////
-void setup() {
-  Serial.begin(9600);
-  //arm of servo motor connection pins
-  arm.ServoAttach(4,5,6,7);
-  //arm of joy stick connection pins: xL,yL,xR, yR
-  arm.JoyStickAttach(A0,A1,A2,A3);
-  pinMode(buzzerPin,OUTPUT);
-  arm.servo1.write(90);
-  arm.servo2.write(90);
-  arm.servo3.write(90);
-  arm.servo4.write(90);
-}
-///////////////////////////////////////////////////////////////
-void loop() {
-  xL = arm.JoyStickL.read_x();
-  yL = arm.JoyStickL.read_y();
-  xR = arm.JoyStickR.read_x();
-  yR = arm.JoyStickR.read_y();
-  date_processing(&xL,&yL);
-  date_processing(&xR,&yR);
-  turnUD();
-  turnLR();
-  turnCO();
-  C_action();
-  Do_action();
-  Serial.println(arm.servo4.read());
-}
-
-</pre>
-
-I slightly modified the code from LK Cokoino to create my wired controller code.
-
-## Phone Control Code
-
-<pre style="background:#fdfdfd; border: none; height: 40pc">
-#include "src/CokoinoArm.h"
-#include <SoftwareSerial.h>
-#define buzzerPin 9
-int state=0;
-CokoinoArm arm;
-int xL,yL,xR,yR;
-SoftwareSerial BTSerial(10,11);
-const int act_max=10;    //Default 10 action,4 the Angle of servo
-int act[act_max][4];    //Only can change the number of action
-int num=0,num_do=0;
-void turnUD(void){
-  if(xL!=512){
-    if(0<=xL && xL<=100){arm.up(10);return;}
-    if(900<xL && xL<=1024){arm.down(10);return;} 
-    if(100<xL && xL<=200){arm.up(20);return;}
-    if(800<xL && xL<=900){arm.down(20);return;}
-    if(200<xL && xL<=300){arm.up(25);return;}
-    if(700<xL && xL<=800){arm.down(25);return;}
-    if(300<xL && xL<=400){arm.up(30);return;}
-    if(600<xL && xL<=700){arm.down(30);return;}
-    if(400<xL && xL<=480){arm.up(35);return;}
-    if(540<xL && xL<=600){arm.down(35);return;} 
-    }
-}
-void turnLR(void){
-  if(yL!=512){
-    if(0<=yL && yL<=100){arm.right(0);return;}
-    if(900<yL && yL<=1024){arm.left(0);return;}  
-    if(100<yL && yL<=200){arm.right(5);return;}
-    if(800<yL && yL<=900){arm.left(5);return;}
-    if(200<yL && yL<=300){arm.right(10);return;}
-    if(700<yL && yL<=800){arm.left(10);return;}
-    if(300<yL && yL<=400){arm.right(15);return;}
-    if(600<yL && yL<=700){arm.left(15);return;}
-    if(400<yL && yL<=480){arm.right(20);return;}
-    if(540<yL && yL<=600){arm.left(20);return;}
-  }
-}
-void turnCO(void){
-  if(arm.servo4.read()>7){
-    if(0<=xR && xR<=100){arm.close(0);return;}
-    if(900<xR && xR<=1024){arm.open(0);return;} 
-    if(100<xR && xR<=200){arm.close(5);return;}
-    if(800<xR && xR<=900){arm.open(5);return;}
-    if(200<xR && xR<=300){arm.close(10);return;}
-    if(700<xR && xR<=800){arm.open(10);return;}
-    if(300<xR && xR<=400){arm.close(15);return;}
-    if(600<xR && xR<=700){arm.open(15);return;}
-    if(400<xR && xR<=480){arm.close(20);return;}
-    if(540<xR && xR<=600){arm.open(20);return;} 
-    }
-  else{arm.servo4.write(8);
-
-  }  
-}
-void date_processing(int *x,int *y){
-  if(abs(512-*x)>abs(512-*y))
-    {*y = 512;}
-  else
-    {*x = 512;}
-}
-void buzzer(int H,int L){
-  while(yR<420){
-    digitalWrite(buzzerPin,HIGH);
-    delayMicroseconds(H);
-    digitalWrite(buzzerPin,LOW);
-    delayMicroseconds(L);
-    yR = arm.JoyStickR.read_y();
-    }
-  while(yR>600){
-    digitalWrite(buzzerPin,HIGH);
-    delayMicroseconds(H);
-    digitalWrite(buzzerPin,LOW);
-    delayMicroseconds(L);
-    yR = arm.JoyStickR.read_y();
-    }
-}
-void C_action(void){
-  if(yR>800){
-    int *p;
-    p=arm.captureAction();
-    for(char i=0;i<4;i++){
-    act[num][i]=*p;
-    p=p+1;     
-    }
-    num++;
-    num_do=num;
-    if(num>=act_max){
-      num=0;
-      buzzer(600,400);
-      }
-    while(yR>600){yR = arm.JoyStickR.read_y();}
-    //Serial.println(act[0][0]);
-  }
-}
-void Do_action(void){
-  if(yR<220){
-    buzzer(200,300);
-    for(int i=0;i<num_do;i++){
-      arm.do_action(act[i],15);
-      }
-    num=0;
-    while(yR<420){yR = arm.JoyStickR.read_y();}
-    for(int i=0;i<2000;i++){
-      digitalWrite(buzzerPin,HIGH);
-      delayMicroseconds(200);
-      digitalWrite(buzzerPin,LOW);
-      delayMicroseconds(300);        
-    }
-  }
-}
-void setup() {
-  Serial.begin(9600);
-  BTSerial.begin(9600);
-  //arm of servo motor connection pins
-  arm.ServoAttach(4,5,6,7);
-  //arm of joy stick connection pins : xL,yL,xR,yR
-  arm.JoyStickAttach(A0,A1,A2,A3);
-  pinMode(buzzerPin,OUTPUT);
-  arm.servo1.write(90);
-  arm.servo2.write(90);
-  arm.servo3.write(90);
-  arm.servo4.write(90);
-}
-
-void loop() {
-  if(BTSerial.available()>0){
-    state=BTSerial.read();
-  }
-  if(state==1){
-    arm.down(20);//moves arm up just says down
-  }
-  if(state==3){
-    arm.up(20);//moves arm down just says up
-  }
-  if(state==5){
-    arm.left(20);
-  }
-  if(state==7){
-    arm.right(20);
-  }
-  if(state==9){
-    arm.open(20);
-  }
-  if(state==11){
-    arm.close(20);
-  }
-  if(state==13){
-    arm.servo1.write(90);
-    arm.servo2.write(90);
-    arm.servo3.write(90);
-    arm.servo4.write(90);
-  }
-  if(arm.servo4.read()<7){
-    arm.servo4.write(8);
-  }
-  Serial.println(state);
-    xL = arm.JoyStickL.read_x();
-  yL = arm.JoyStickL.read_y();
-  xR = arm.JoyStickR.read_x();
-  yR = arm.JoyStickR.read_y();
-  date_processing(&xL,&yL);
-  date_processing(&xR,&yR);
-  turnUD();
-  turnLR();
-  turnCO();
-  C_action();
-  Do_action();
-}
-
-</pre>
-    
-I took my wired controller code and added code for a Bluetooth phone control.
-## Voice Control Code
-
-<pre style="background:#fdfdfd; border: none; height: 40pc">
+<pre style="background:fdfdfd; border:none; height:40pc">
 #include "DFRobot_DF2301Q.h"
-
+int motor1pin1 = 2;
+int motor1pin2 = 3;
+int motor2pin1 = 12;
+int motor2pin2 = 13;
 //I2C communication
 DFRobot_DF2301Q_I2C DF2301Q;
 int updown=0;
 int leftright=0;
 int openclose=0;
+int forwardback=0;
+int turnleftright = 0;
 #include "src/CokoinoArm.h"
 #include <SoftwareSerial.h>
 #define buzzerPin 9
@@ -564,44 +192,44 @@ int act[act_max][4];    //Only can change the number of action
 int num=0,num_do=0;
 void turnUD(void){
   if(xL!=512){
-    if(0<=xL && xL<=100){arm.up(35);return;}
-    if(900<xL && xL<=1024){arm.down(35);return;} 
-    if(100<xL && xL<=200){arm.up(30);return;}
-    if(800<xL && xL<=900){arm.down(30);return;}
+    if(0<=xL && xL<=100){arm.up(10);return;}
+    if(900<xL && xL<=1024){arm.down(10);return;} 
+    if(100<xL && xL<=200){arm.up(20);return;}
+    if(800<xL && xL<=900){arm.down(20);return;}
     if(200<xL && xL<=300){arm.up(25);return;}
     if(700<xL && xL<=800){arm.down(25);return;}
-    if(300<xL && xL<=400){arm.up(20);return;}
-    if(600<xL && xL<=700){arm.down(20);return;}
-    if(400<xL && xL<=480){arm.up(10);return;}
-    if(540<xL && xL<=600){arm.down(10);return;} 
+    if(300<xL && xL<=400){arm.up(30);return;}
+    if(600<xL && xL<=700){arm.down(30);return;}
+    if(400<xL && xL<=480){arm.up(35);return;}
+    if(540<xL && xL<=600){arm.down(35);return;} 
     }
 }
 void turnLR(void){
   if(yL!=512){
-    if(0<=yL && yL<=100){arm.right(35);return;}
-    if(900<yL && yL<=1024){arm.left(35);return;}  
-    if(100<yL && yL<=200){arm.right(30);return;}
-    if(800<yL && yL<=900){arm.left(30);return;}
-    if(200<yL && yL<=300){arm.right(25);return;}
-    if(700<yL && yL<=800){arm.left(25);return;}
-    if(300<yL && yL<=400){arm.right(20);return;}
-    if(600<yL && yL<=700){arm.left(20);return;}
-    if(400<yL && yL<=480){arm.right(10);return;}
-    if(540<yL && yL<=600){arm.left(10);return;}
+    if(0<=yL && yL<=100){arm.right(0);return;}
+    if(900<yL && yL<=1024){arm.left(0);return;}  
+    if(100<yL && yL<=200){arm.right(5);return;}
+    if(800<yL && yL<=900){arm.left(5);return;}
+    if(200<yL && yL<=300){arm.right(10);return;}
+    if(700<yL && yL<=800){arm.left(10);return;}
+    if(300<yL && yL<=400){arm.right(15);return;}
+    if(600<yL && yL<=700){arm.left(15);return;}
+    if(400<yL && yL<=480){arm.right(20);return;}
+    if(540<yL && yL<=600){arm.left(20);return;}
   }
 }
 void turnCO(void){
   if(arm.servo4.read()>7){
-    if(0<=xR && xR<=100){arm.close(35);return;}
-    if(900<xR && xR<=1024){arm.open(35);return;} 
-    if(100<xR && xR<=200){arm.close(30);return;}
-    if(800<xR && xR<=900){arm.open(30);return;}
-    if(200<xR && xR<=300){arm.close(25);return;}
-    if(700<xR && xR<=800){arm.open(25);return;}
-    if(300<xR && xR<=400){arm.close(20);return;}
-    if(600<xR && xR<=700){arm.open(20);return;}
-    if(400<xR && xR<=480){arm.close(10);return;}
-    if(540<xR && xR<=600){arm.open(10);return;} 
+    if(0<=xR && xR<=100){arm.close(0);return;}
+    if(900<xR && xR<=1024){arm.open(0);return;} 
+    if(100<xR && xR<=200){arm.close(5);return;}
+    if(800<xR && xR<=900){arm.open(5);return;}
+    if(200<xR && xR<=300){arm.close(10);return;}
+    if(700<xR && xR<=800){arm.open(10);return;}
+    if(300<xR && xR<=400){arm.close(15);return;}
+    if(600<xR && xR<=700){arm.open(15);return;}
+    if(400<xR && xR<=480){arm.close(20);return;}
+    if(540<xR && xR<=600){arm.open(20);return;} 
     }
   else{arm.servo4.write(8);
 
@@ -665,6 +293,10 @@ void Do_action(void){
 }
 void setup()
 {
+  pinMode(motor1pin1, OUTPUT);
+  pinMode(motor1pin2, OUTPUT);
+  pinMode(motor2pin1, OUTPUT);
+  pinMode(motor2pin2, OUTPUT);
   Serial.begin(9600);
   BTSerial.begin(9600);
   //arm of servo motor connection pins
@@ -719,8 +351,7 @@ void setup()
    * @note Can enter wake-up state through ID-1 in I2C mode
    */
   // DF2301Q.playByCMDID(1);   // Wake-up command
-  DF2301Q.playByCMDID(23);   // Common word ID
-
+  //DF2301Q.playByCMDID(23);   // Common word ID
 }
 
 void loop(){
@@ -773,31 +404,108 @@ void loop(){
       leftright = 0;
       openclose = 0;
       break;
-    
+    case 22://go forward
+      Serial.println("forward");
+      forwardback = 1;
+      break;
+    case 23://go backwards
+      Serial.println("backwards");
+      forwardback = 2;
+      break;
+    case 24://stop car
+      Serial.println("Stop Car");
+      forwardback = 0;
+      turnleftright = 0;
+      break;
+    case 25://turn left
+      Serial.println("Turn left");
+      turnleftright = 1;
+      break;
+    case 26://turn left
+      Serial.println("Turn left");
+      turnleftright = 1;
+      break;
+    case 27://turn left
+      Serial.println("Turn left");
+      turnleftright = 1;
+      break;
+    case 29://turn right
+      Serial.println("Turn right");
+      turnleftright = 2;
+      break;
+    case 30://turn right
+      Serial.println("Turn right");
+      turnleftright = 2;
+      break;
   }
-  Serial.print(updown);
-  Serial.print(leftright);
-  Serial.println(openclose);
-    if(BTSerial.available()>0){
-    state=BTSerial.read();
+  if(BTSerial.available()>0){
+  state=BTSerial.read();
+  }
+  if(state==21){
+    digitalWrite(motor1pin1, HIGH);//forwards
+    digitalWrite(motor1pin2, LOW);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, LOW);
+  }
+  if(state==22){
+    digitalWrite(motor1pin1, HIGH);
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+  }
+  if(state==24){
+    digitalWrite(motor1pin1, HIGH);
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+  }
+  if(state==26){
+    digitalWrite(motor1pin1, HIGH);
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+  }
+  if(state==28){
+    digitalWrite(motor1pin1, HIGH);//stop
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+  }
+  if(state==23){
+    digitalWrite(motor1pin1, LOW);//backwards
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, HIGH);
+  }
+  if(state==25){
+    digitalWrite(motor1pin1, HIGH);//turnleft
+    digitalWrite(motor1pin2, LOW);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);    
+  }
+  if(state==27){
+    digitalWrite(motor1pin1, HIGH);//turnright
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, LOW);
   }
   if(state==1){
-    arm.down(20);//moves arm up just says down
+    arm.down(10);//moves arm up just says down
   }
   if(state==3){
-    arm.up(20);//moves arm down just says up
+    arm.up(10);//moves arm down just says up
   }
   if(state==5){
-    arm.left(20);
+    arm.left(0);
   }
   if(state==7){
-    arm.right(20);
+    arm.right(0);
   }
   if(state==9){
-    arm.open(20);
+    arm.open(0);
   }
   if(state==11){
-    arm.close(20);
+    arm.close(0);
   }
   if(state==13){
     arm.servo1.write(90);
@@ -821,10 +529,10 @@ void loop(){
   C_action();
   Do_action();
   if(updown==1){
-    arm.down(20);//says move down but actually mvoes up
+    arm.down(40);//says move down but actually mvoes up
   }
   if(updown==2){
-    arm.up(20);//says move up but acutally moves down
+    arm.up(40);//says move up but acutally moves down
   }
   if(leftright==1){
     arm.left(20);
@@ -848,8 +556,61 @@ void loop(){
   if(openclose==0){
     arm.servo4.write(arm.servo4.read());
   }
+  if(forwardback==1){
+    digitalWrite(motor1pin1, HIGH);//forwards
+    digitalWrite(motor1pin2, LOW);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, LOW);
+    delay(20);
+    digitalWrite(motor1pin1, HIGH);//stop
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+    delay(20);    
+  }
+  if(forwardback==2){
+    digitalWrite(motor1pin1, LOW);//backwards
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, HIGH);
+    delay(20);
+    digitalWrite(motor1pin1, HIGH);//stop
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+    delay(20);    
+  }
+  if(forwardback==0){
+    digitalWrite(motor1pin1, HIGH);//stop
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);
+  }
+  if(turnleftright==1){
+    digitalWrite(motor1pin1, HIGH);//turnleft
+    digitalWrite(motor1pin2, LOW);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH); 
+    delay(30);
+    digitalWrite(motor1pin1, HIGH);//stop
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);    
+    delay(20);
+  }
+  if(turnleftright==2){
+    digitalWrite(motor1pin1, HIGH);//turnright
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, LOW);
+    delay(30);
+    digitalWrite(motor1pin1, HIGH);//stop
+    digitalWrite(motor1pin2, HIGH);
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, HIGH);    
+    delay(20);
+  }
 }  
-
 </pre>
 
 This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
@@ -920,10 +681,3 @@ The biggest challenge that I faced was trying to build the circuit on the breadb
 ## Next Steps
 
 I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, code the arm so that the phone can make the arm work remotely, and add at least one modification.
-<pre style="background:#fdfdfd; border: none; height: 40pc">
-
-void setup 
-sadl/fkjaslkdfj
-
-</pre>
-</pre>
