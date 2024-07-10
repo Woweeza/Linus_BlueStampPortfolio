@@ -361,6 +361,7 @@ void loop() {
   Do_action();
   Serial.println(arm.servo4.read());
 }
+
 </pre>
 
 I slightly modified the code from LK Cokoino to create my wired controller code.
@@ -537,6 +538,7 @@ void loop() {
   C_action();
   Do_action();
 }
+
 </pre>
     
 I took my wired controller code and added code for a Bluetooth phone control.
@@ -847,6 +849,7 @@ void loop(){
     arm.servo4.write(arm.servo4.read());
   }
 }  
+
 </pre>
 
 This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
@@ -917,3 +920,9 @@ The biggest challenge that I faced was trying to build the circuit on the breadb
 ## Next Steps
 
 I plan to start on my main project, the Phone-Controlled Robotic Arm. I have to build the arm, create a Bluetooth connection between the arm and the phone, code the arm so that the phone can make the arm work remotely, and add at least one modification.
+<pre style="background:#fdfdfd; border: none; height: 40pc">
+
+void setup 
+sadl/fkjaslkdfj
+
+</pre>
