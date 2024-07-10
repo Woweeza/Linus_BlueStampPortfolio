@@ -13,6 +13,8 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
   
 # Second Modification
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dnNP3EXICmc?si=2tmOGjXiVf8oe8Vo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Summary
 
 My modification was putting my robotic arm on a car. It used 2 motors and I used a motor driver to control them. I could use both Bluetooth and voice control to make the car go forward, backward, turn left, and turn right.
