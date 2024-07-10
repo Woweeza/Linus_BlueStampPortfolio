@@ -195,9 +195,9 @@ The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructabl
     <h1>Code</h1>
     <div class="code-block">
         <pre>
-<span style="color:#FFFFFF;"><b>Arduino Uno & H-Bridge (car)</b></span>
+<span style="color:#FFFFFF;"><b> </b></span>
             <code>
-<span style="color:#FFFFFF;">
+<span style="color:#000000;">
 /*
  * This code applies to the Cokoino mechanical arm
  * Through this link you can download the source code:
