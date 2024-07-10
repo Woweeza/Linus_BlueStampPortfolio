@@ -387,8 +387,7 @@ void loop() {
             </code>
         </pre>
     </div>
-</body>
-</html>
+
 
 I slightly modified the code from LK Cokoino to create my wired controller code.
 
@@ -592,8 +591,7 @@ void loop() {
             </code>
         </pre>
     </div>
-</body>
-</html>
+
 
 
 I took my wired controller code and added code for a Bluetooth phone control.
