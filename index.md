@@ -169,8 +169,7 @@ The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructabl
 
 # Final Code
 
-<div style="background:#fdfdfd; border:none; height:40pc;">
-<pre>
+```c++
 #include "DFRobot_DF2301Q.h"
 int motor1pin1 = 2;
 int motor1pin2 = 3;
@@ -614,9 +613,7 @@ void loop(){
     delay(20);
   }
 }  
-
-</pre>
-</div>
+```
 
 This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
 
