@@ -388,8 +388,7 @@ void loop() {
         </pre>
     </div>
 
-
-<p>I slightly modified the code from LK Cokoino to create my wired controller code.
+    I slightly modified the code from LK Cokoino to create my wired controller code.
 
 <html lang="en">
 <head>
@@ -591,7 +590,8 @@ void loop() {
             </code>
         </pre>
     </div>
-<p>I took my wired controller code and added code for a Bluetooth phone control.
+    
+    I took my wired controller code and added code for a Bluetooth phone control.
 
 <html lang="en">
 <head>
@@ -931,8 +931,9 @@ void loop(){
 </body>
 </html>
 
-This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own. It includes the voice control that I added.
+    This code is an updated version of the code above. Part of the updated part is borrowed from the DFRobot website from their tutorial and the other part I made on my own.     It includes the voice control that I added.
 
+    sdkfasdlf/j
 ## Block Code
 
 ![Block_Code](dummy123.png)
