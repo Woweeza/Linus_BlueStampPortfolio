@@ -165,11 +165,6 @@ I plan on completing the physical part of my robotic arm so that I can control i
 
 The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructables.
 
-
-# Code
-<!---Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
-
-## Wired Controller Code
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -182,7 +177,6 @@ The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructabl
             width: 750px;
             height: 475px;
             max-height: 475px;
-            background-color: #1E1E1E; /* Optional: Set background color */
             padding: 5px;
             border: 2px solid #CCCCCC;
             border-radius: 10px; /* Optional: Rounded corners */
@@ -195,9 +189,9 @@ The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructabl
     <h1>Code</h1>
     <div class="code-block">
         <pre>
-<span style="color:#FFFFFF;"><b> </b></span>
+<span style="color:#606C71;"><b>Robotic Arm Joystick Control</b></span>
             <code>
-<span style="color:#000000;">
+<span style="color:#606C71;">
 /*
  * This code applies to the Cokoino mechanical arm
  * Through this link you can download the source code:
