@@ -323,7 +323,7 @@ void setup()
    * @brief Set voice volume
    * @param voc - Volume value(1~7)
    */
-  DF2301Q.setVolume(7);
+  DF2301Q.setVolume(13);
 
   Serial.print("Ok");
 
@@ -368,7 +368,7 @@ void loop(){
     Serial.print("CMDID = ");
     Serial.println(CMDID);
   }
-  DF2301Q.setVolume(7);
+//  DF2301Q.setVolume(20);
   switch (CMDID){
     case 5://first custom commmand
       Serial.println("arm up");
@@ -407,6 +407,27 @@ void loop(){
       leftright = 0;
       openclose = 0;
       break;
+    case 13://ninth custom command
+      Serial.println("car forward");
+      forwardback = 1;
+      break;
+    case 14://tenth custom command
+      Serial.println("car backward");
+      forwardback = 2;
+      break;
+    case 15://eleventh custom command
+      Serial.println("car stop");
+      forwardback = 0;
+      turnleftright = 0;
+      break;
+    case 16://twelfth custom command
+      Serial.println("car left");
+      turnleftright = 1;
+      break;
+    case 17://thirteenth custom command
+      Serial.println("car right");
+      turnleftright = 2;
+      break;
     case 22://go forward
       Serial.println("forward");
       forwardback = 1;
@@ -439,6 +460,13 @@ void loop(){
     case 30://turn right
       Serial.println("Turn right");
       turnleftright = 2;
+      break;
+    case 82://reset the arm
+      Serial.println("arm reset");
+      arm.servo1.write(90);
+      arm.servo2.write(90);
+      arm.servo3.write(90);
+      arm.servo4.write(90);
       break;
   }
   if(BTSerial.available()>0){
