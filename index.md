@@ -620,7 +620,7 @@ This code is an updated version of the code above. Part of the updated part is b
 
 ## Block Code
 
-![Block_Code](dummy123.png)
+![Block_Code](ermwhatthesigma.png)
 
 I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth.
 
