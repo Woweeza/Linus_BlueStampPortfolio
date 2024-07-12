@@ -655,8 +655,8 @@ This code is an updated version of the code above. Part of the updated part is b
 I made this code on my own and it is used for the app that controls the robotic arm via Bluetooth.
 
 # Bill of Materials
-<!---Here's where you'll list the parts of your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. -->
+<!---Here's where you'll list the parts of your project. To add more rows, just copy and paste the example below.
+Don't forget to put the link Please don't buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. -->
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
