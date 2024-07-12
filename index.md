@@ -678,6 +678,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Switch | Turn on and off the power of the car | $5.27 | <a href="https://www.amazon.com/Gardner-Bender-GSW-41-Electrical-Appliance/dp/B000BVZBPW?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=ATVPDKIKX0DER&th=1"> Link </a> |
 | Male-Male Jumper Wires | Connecting all the electric parts of the robot so they all get power | $3.95 | <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/759/5353615"> Link </a> |
 | Male-Female Jumper Wires | Connecting all the electric parts of the robot so they all get power | $3.95 | <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/826/5353622"> Link </a> |
+| L298 Motor Driver | Controlling the motors to make the car move | $6.99 | <a href="https://www.amazon.com/Qunqi-Controller-Module-Stepper-Arduino/dp/B014KMHSW6"> Link </a> |
 <!---| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
