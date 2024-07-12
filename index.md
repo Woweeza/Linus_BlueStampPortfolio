@@ -164,7 +164,9 @@ I plan on completing the physical part of my robotic arm so that I can control i
 ![Does it matter what I write here?](dummy5.png)
 ## Figure 6: Voice Control Wiring Diagram
 ![erm what the sigma](dummyskibidi.png)
-The figures 1-5 were from LK Cokoino. The figure 6 was from AutoDesk Instructables.
+## Figure 7: Motor Driver Wiring Diagram
+![huh](dummydummy.png)
+The figures 1-5 were from LK Cokoino. Figure 6 was from AutoDesk Instructables. Figure 7 was from a YouTube Tutorial by Ryan Chan.
 
 <a id="code"></a>
 
