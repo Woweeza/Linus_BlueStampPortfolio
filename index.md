@@ -30,7 +30,7 @@ My modification was putting my robotic arm on a car. It used 2 motors and I used
 - 1 Switch: Turn the battery on and off in the car
 - Screws, Nuts, Fasteners, and Spacers: Hold the car together
 - Velcro and Hot Glue: Hold the battery, motor driver, and arm to the chassis
-- 1 L298N Motor Driver: Contorl the motors
+- 1 L298N Motor Driver: Control the motors
 
 ## Challenges Faced
 
@@ -671,6 +671,11 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Screws and nuts | Holding together the robot | $38.99 | <a href="https://www.amazon.com/Deluxe-Hardware-Assortment-Professional-Washers/dp/B076CVQZWG?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1C1KOESPL5YO9"> Link </a> |
 | Columns | Holding up different parts of the robot | $11.99 | <a href="https://www.amazon.com/GeeekPi-Standoffs-Assortment-Box，Male-Female-Screwdriver/dp/B07PHBTTGV?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AOP0CH6UTUPHT"> Link </a> |
 | WS-2520-TR | Recognizing voice to control the robot arm | $16.90 | <a href="https://www.dfrobot.com/product-2665.html?tracking=snqbbMs0lddTvr3eSVRKmzR6PWWGRVs9bZLm6dbDWV7auVnyVbcFCdESMTPnwDyr"> Link </a> |
+| 2 Wheel Smart Car Kit | Wheels, Motors, Chassis, Universal Wheel, Screws, Nuts, and Spacers to create most of the physical part of the car | $17.95 | <a href="https://shop.barnabasrobotics.com/products/barnabas-rover-plastic-chassis-only-2-x-dc-motors-only"> Link </a> |
+| 9 Volt battery | Powering the Car | $9.02 | <a href="https://www.amazon.com/Amazon-Basics-Performance-All-Purpose-Batteries/dp/B0774D64LT?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=ATVPDKIKX0DER&th=1"> Link </a> |
+| Switch | Turn on and off the power of the car | $5.27 | <a href="https://www.amazon.com/Gardner-Bender-GSW-41-Electrical-Appliance/dp/B000BVZBPW?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=ATVPDKIKX0DER&th=1"> Link </a> |
+| Male-Male Jumper Wires | Connecting all the electric parts of the robot so they all get power | $3.95 | <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/759/5353615"> Link </a> |
+| Male-Female Jumper Wires | Connecting all the electric parts of the robot so they all get power | $3.95 | <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/826/5353622"> Link </a> |
 <!---| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
