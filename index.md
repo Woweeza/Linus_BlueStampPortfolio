@@ -681,9 +681,9 @@ Don't forget to put the link Please don't buy each component inside the quotatio
 | L298 Motor Driver | Controlling the motors to make the car move | $6.99 | <a href="https://www.amazon.com/Qunqi-Controller-Module-Stepper-Arduino/dp/B014KMHSW6"> Link </a> |
 
 # Other Resources/Examples
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+- [Connecting Robot Arm To Bluetooth Using MIT App Inventor](https://www.instructables.com/Using-MIT-App-Inventor-to-Control-Arduino-the-Basi/)
+- [Voice Control](https://wiki.dfrobot.com/SKU_SEN0539-EN_Gravity_Voice_Recognition_Module_I2C_UART)
+- [Arduino Bluetooth Tutorial](https://howtomechatronics.com/tutorials/arduino/arduino-and-hc-05-bluetooth-module-tutorial/)
 
 # Starter Project
 
