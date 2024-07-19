@@ -9,7 +9,7 @@ The phone-controlled robotic arm is a 3-jointed arm with a rotating base. It has
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**-->
 
-![Headstone Image](Linus_F.jpg)![uh wut](skibidirizz.png)
+![Headstone Image](Linus_F.jpg)![uh wut](Linus F (1).png)
   
 # Second Modification
 
