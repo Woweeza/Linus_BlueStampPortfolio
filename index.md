@@ -65,6 +65,10 @@ My next steps are going to be maybe adding another modification and if I can't, 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ddody_513Wo?si=dr0Joc5v0mifrqbb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## Picture
+
+![ligma](IMG_1386.jpg)
+
 ## Summary
 
 My final milestone was making my robot Bluetooth-controlled through an app that I made using MIT App Inventor. There is an HC-05 Bluetooth Module that I added to my robot that will take signals from the phone and send them to the Arduino to make the robot move accordingly.
